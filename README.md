@@ -31,13 +31,13 @@ Let the Cluster Operators settle
 oc adm wait-for-stable-cluster --minimum-stable-period=120s --timeout=15m
 ```
 
-1. Create the external-secrets project:
+2. Create the external-secrets project:
 
 ```bash
 oc new-project external-secrets
 ```
 
-1. Create the ca-bundle config map:
+3. Create the ca-bundle config map:
 
 ```bash
 oc create -f - << EOF
@@ -51,7 +51,10 @@ metadata:
 EOF
 ```
 
-1. Deploy External Secrets Operator from Helm
+4. Deploy External Secrets Operator from Helm.
+
+- genericTargets RBAC in values.yaml
+- ca-bundle.crt custom mount for Vault CA
 
 ```bash
 helm repo add external-secrets https://charts.external-secrets.io
