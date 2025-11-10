@@ -13,7 +13,7 @@ spec:
     name: test-policy
     manifest:
       apiVersion: policy.open-cluster-management.io/v1
-      kind: Policy
+      kind: Policy  
     template:
       engineVersion: v2
       mergePolicy: Merge
