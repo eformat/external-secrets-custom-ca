@@ -402,3 +402,13 @@ certController:
 # -- Specifies `dnsOptions` to deployment
 dnsConfig: {}
 
+# -- https://external-secrets.io/latest/guides/targeting-custom-resources/
+genericTargets:
+  enabled: true
+  resources:
+    - apiGroup: "argoproj.io"
+      resources: ["applications"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    - apiGroup: "policy.open-cluster-management.io"
+      resources: ["policies"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
